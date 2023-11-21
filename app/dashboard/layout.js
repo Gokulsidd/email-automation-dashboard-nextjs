@@ -4,7 +4,7 @@ import SidebarComponent from '@/app/ui/dashboard/sidebar/sidebar'
 import NavbarComponent from '../ui/dashboard/navbar/navbar'
 
 const Layout = ({children}) => {
-  const [showSideBar , setShowSideBar] = useState(false)
+  const [showSideBar , setShowSideBar] = useState(true)
   return (
     <div className='flex-col h-screen'>
         <div>

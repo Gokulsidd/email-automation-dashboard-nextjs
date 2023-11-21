@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import SaveTemplate from '@/app/ui/dashboard/saveTemplate/saveTemplate';
+import DashboardHeader from '@/app/ui/dashboard/dashboardHeader/page';
+import PrimaryButton from '@/app/ui/primaryButton/page';
 
 
 
@@ -19,7 +21,7 @@ const EmailCampaign = () => {
     //  .then((res) => {
     //   setTemplates(res.data)
     //  })
-  } , [showModal])
+  } , [showModal , templates ])
 
 
 
@@ -81,7 +83,7 @@ const EmailCampaign = () => {
 
   return (
       <div className='w-full  h-full m-auto space-y-6'>
-      <div className='h-14 font-semibold text-textDark flex items-center pl-14 shadow-sm border-b-borderColor border-b'>Compose Email</div>
+      <DashboardHeader heading={'Compose Email'} />
       <form onSubmit={handleSubmit} className='space-y-10 relative px-16 py-6 '>
       <div>
           <input
@@ -129,9 +131,11 @@ const EmailCampaign = () => {
           </select>
         </div>
         <div>
-        <button className='bg-primary hover:bg-[#0041A3] p-3 rounded-md shadow-md text-slate-100 font-semibold text-sm right-60 bottom-14 absolute' type='button' onClick={handleSaveTemplate}>Save Template</button>   
+        <div className='right-16 bottom-14 absolute space-x-8'>
+        <PrimaryButton type={'button'} handleClick={handleSaveTemplate} ButtonName={'Save Template'} />   
         <SaveTemplate isOpen={showModal} onClose={() => setShowModal(false)} onSave={handleSaveTemplateData} subject={subject} body={body} />     
-        <button className='bg-primary hover:bg-[#0041A3] p-3 rounded-md shadow-md text-slate-100 font-semibold text-sm right-24 bottom-14 absolute' type="submit">Send Email</button>
+        <PrimaryButton type={'submit'} ButtonName={'Send Email'} />   
+        </div>
         </div>
       </form>
     </div>

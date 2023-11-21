@@ -1,8 +1,11 @@
+import DashboardHeader from '@/app/ui/dashboard/dashboardHeader/page'
 import React from 'react'
 
 const GlobalAnalytics = () => {
   return (
-    <div>GlobalAnalytics</div>
+    <div className='w-full'>
+      <DashboardHeader heading={'Global Analytics'} />
+    </div>
   )
 }
 

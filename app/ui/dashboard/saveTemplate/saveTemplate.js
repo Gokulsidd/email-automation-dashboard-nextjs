@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PrimaryButton from '../../primaryButton/page';
 
 const SaveTemplate = ({ isOpen, onClose, onSave , subject , body }) => {
   const [templateName, setTemplateName] = useState('');
@@ -25,7 +26,7 @@ const SaveTemplate = ({ isOpen, onClose, onSave , subject , body }) => {
   return (
     <>
       {isOpen && (
-        <div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'>
+        <div className='fixed top-0 -left-8 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'>
           <div className='bg-white p-6 rounded-md shadow-md'>
             <h2 className='text-xl w-[700px] font-semibold mb-4'>Save Template</h2>
             <div className='mb-4'>
@@ -66,12 +67,7 @@ const SaveTemplate = ({ isOpen, onClose, onSave , subject , body }) => {
               />
             </div>
             <div className='flex justify-end space-x-4'>
-              <button
-                className='bg-[#0052CC] hover:bg-[#0041A3] py-2 px-4 rounded-md shadow-md text-slate-100  mr-2'
-                onClick={handleSave}
-              >
-                Save
-              </button>
+              <PrimaryButton handleClick={handleSave} ButtonName={'Save'} />
               <button
                 className='bg-gray-300 hover:bg-gray-400 py-2 px-4 rounded-md shadow-md'
                 onClick={() => {
