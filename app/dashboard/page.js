@@ -3,7 +3,7 @@ import EmailCampaign from './emailCampaign/page'
 
 const Dashboard = () => {
   return (
-    <div><EmailCampaign /></div>
+    <div className='w-full'><EmailCampaign /></div>
   )
 }
 
