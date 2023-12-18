@@ -55,9 +55,6 @@ const EmailCampaign = () => {
     setShowModal(false);
   };
 
-  const handleSelectDialog = () => {
-  
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -78,7 +75,7 @@ const EmailCampaign = () => {
       });
 
       if (response.ok) {
-        console.log("email sent successfully");
+        alert("email sent successfully");
         setSelectedEmailValues([])
         setSubject('')
         setBody('')
@@ -91,10 +88,10 @@ const EmailCampaign = () => {
   };
 
   return (
-    <div className="w-full  h-full m-auto space-y-6">
+    <div className="min-w-[88%] h-full m-auto  space-y-6">
       <DashboardHeader heading={"Compose Email"} />
-      <form onSubmit={handleSubmit} className="space-y-10 relative px-16 py-6 ">
-        <div className="flex justify-between items-center">
+      <form onSubmit={handleSubmit} className="w-full space-y-10 relative px-16 py-6 solid">
+        <div className="w-full  flex justify-between items-center">
           <SelectEmails selectedValues={selectedEmailValues} setSelectedValues={setSelectedEmailValues} options={emailOptions} />
         </div>
         <div>

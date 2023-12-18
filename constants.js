@@ -1,23 +1,36 @@
+
+import CampaignIcon from '@mui/icons-material/Campaign';
+import InboxSharpIcon from '@mui/icons-material/InboxSharp';
+import EmailSharpIcon from '@mui/icons-material/EmailSharp';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+import InsightsSharpIcon from '@mui/icons-material/InsightsSharp';
+
+
 export const sideBarData = [
     {
         path:'/dashboard/emailCampaign',
-        name:'Email Campaign'
+        name:'Email Campaign',
+        icon:CampaignIcon
     },
     {
         path:'/dashboard/masterInbox',
-        name:'Master Inbox'
+        name:'Master Inbox',
+        icon:InboxSharpIcon
     },
     {
         path:'/dashboard/emailAccounts',
-        name:'Email Accounts'
+        name:'Email Accounts',
+        icon:EmailSharpIcon
     },
     {
         path:'/dashboard/integrations',
-        name:'Integrations'
+        name:'Integrations',
+        icon:IntegrationInstructionsIcon
     },
     {
         path:'/dashboard/globalAnalytics',
-        name:'Global Analytics'
+        name:'Dashboard Analytics',
+        icon:InsightsSharpIcon
     }
 ]
 

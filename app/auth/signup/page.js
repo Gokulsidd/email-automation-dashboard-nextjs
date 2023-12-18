@@ -14,24 +14,24 @@ const SignUp = () => {
     e.preventDefault();
     router.push('/auth')
 
-    // try {
-    //   const response = await axios.post('http://localhost:3001/api/user/signup', {
-    //     username,
-    //     email,
-    //     password,
-    //   });
+    try {
+      const response = await axios.post('http://localhost:3001/api/user/signup', {
+        username,
+        email,
+        password,
+      });
 
-    //   if (response.status === 201) {
-    //     const token = response.data.token;
-    //     localStorage.setItem('token', token);
-    //     console.log('Signup successful! Token:', token);
-    //   } else {
-    //     console.error('Signup failed:', response.statusText);
-    //   }
-    // } catch (error) {
-    //   console.error('Error during signup:', error);
-    //   setError('Failed to sign up');
-    // }
+      if (response.status === 201) {
+        const token = response.data.token;
+        localStorage.setItem('token', token);
+        console.log('Signup successful! Token:', token);
+      } else {
+        console.error('Signup failed:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+      setError('Failed to sign up');
+    }
   };
 
   return (
