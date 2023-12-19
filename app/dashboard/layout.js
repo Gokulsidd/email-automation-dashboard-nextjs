@@ -10,7 +10,7 @@ const Layout = ({children}) => {
         <div>
             <NavbarComponent handleSideBar={setShowSideBar} isOpen={showSideBar} />
         </div>
-        <div className='w-full h-[150vh] flex'>
+        <div className='w-full h-[90vh] flex'>
             <SidebarComponent handleSideBar={showSideBar} />
             <div className={showSideBar ? `min-w-[1300px]` : `w-full`}>{children}</div>
         </div>

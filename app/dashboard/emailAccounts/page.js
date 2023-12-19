@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import CheckBox from "@mui/material/Checkbox";
 
+import { emailAccountsData } from '@/constants';
 import DashboardHeader from '@/app/ui/dashboard/dashboardHeader/page'
 import EmailAccountCard from '@/app/ui/dashboard/emailAccountCard/page'
 import EmailCardShimmer from '@/app/ui/dashboard/shimmer/page';
@@ -13,38 +14,6 @@ const EmailAccounts = () => {
   const [selectedAccounts, setSelectedAccounts] = useState([]);
   const [selectAllChecked, setSelectAllChecked] = useState(false);
 
-  const emailAccountsData = [
-    {
-      emailAddress:'gokulsidharth02@gmail.com',
-      emailSent:27,
-      warmupEmailSent:12,
-      isWarmUpOn: true
-    },
-    {
-      emailAddress:'gokulsidharth02@gmail.com',
-      emailSent:53,
-      warmupEmailSent:15,
-      isWarmUpOn: true
-    },
-    {
-      emailAddress:'gokul@gmail.com',
-      emailSent:32,
-      warmupEmailSent:10,
-      isWarmUpOn: true
-    },
-    {
-      emailAddress:'sidharth02@gmail.com',
-      emailSent:45,
-      warmupEmailSent:25,
-      isWarmUpOn: true
-    },
-    {
-      emailAddress:'sid02@gmail.com',
-      emailSent:23,
-      warmupEmailSent:30,
-      isWarmUpOn: false
-    }
-  ]
 
   useEffect(() => {
     // axios.get("http://localhost:3001/api/emailAccounts").then((res) => {
@@ -88,7 +57,7 @@ const EmailAccounts = () => {
       </div>
       
       <div className='w-full flex flex-col space-y-4'>
-      <header className="flex justify-between items-center px-8 py-2 mx-4  text-xs font-semibold  text-gray-500">
+      <header className="flex justify-between items-center px-8 py-2 mx-4  text-xs font-semibold  text-textSoft">
         <div className='flex gap-3 items-center min-w-[30%]'>
           <CheckBox onChange={handleSelectAll} checked={selectAllChecked} />
           <p>NAME</p>

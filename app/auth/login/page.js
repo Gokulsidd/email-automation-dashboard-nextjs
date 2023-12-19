@@ -1,8 +1,9 @@
 'use client'
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import axios from 'axios';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Home } from '@mui/icons-material';
 import toast, { Toaster } from 'react-hot-toast';
 
 
@@ -53,10 +54,17 @@ const Login = () => {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-login-backCover py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md rounded-md w-full space-y-8 bg-white px-10 py-10 shadow-md">
+    <div className='min-h-screen'>
+    <div className='flex justify-between px-6 py-4'>
+        <p className='text-primary text-2xl font-bold'>logo</p>
+        <Link href={'/'}>
+        <div className='hover:cursor-pointer hover:bg-fadedBg p-2'><Home /></div>
+        </Link>
+      </div>
+    <div className="min-h-screen flex items-start justify-center  py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md rounded-md w-full space-y-8 bg-white px-10 py-10 email-account-card-shadow">
         <div>
-          <h2 className=" text-center text-3xl font-extrabold text-primary">Log In</h2>
+          <h2 className=" text-center text-2xl font-bold text-textDark">Log In</h2>
         </div>
         <form className="mt-8 space-y-6 " onSubmit={handleLogin}>
         <div className="rounded-md shadow-sm space-y-3">
@@ -106,6 +114,7 @@ const Login = () => {
           </span>
         </p>
       </div>
+    </div>
     </div>
   );
 };

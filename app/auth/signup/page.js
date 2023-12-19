@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { Home } from '@mui/icons-material';
+import Link from 'next/link';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
@@ -35,11 +37,18 @@ const SignUp = () => {
   };
 
   return (
-    <div className='lg:h-screen w-full  bg-login-backCover flex justify-center items-center '>
-      <div className='lg:w-[400px] sm:w-full md:w-[400px] w-full h-auto bg-white rounded-md shadow-lg px-8 py-10 '>
+    <div className='lg:h-screen w-full space-y-10'>
+      <div className='flex justify-between px-6 py-4'>
+        <p className='text-primary text-2xl font-bold'>logo</p>
+        <Link href={'/'}>
+        <div className='hover:cursor-pointer hover:bg-fadedBg p-2'><Home /></div>
+        </Link>
+      </div>
+    <div className='w-full  flex justify-center items-center '>
+      <div className='lg:w-[400px] sm:w-full md:w-[400px] w-full h-auto bg-white rounded-md  px-8 py-10 '>
         <div className='text-[#0052CC] text-[34px] text-center font-bold tracking-wider'></div>
         <div className='py-4'>
-          <p className='text-center mb-4 font-semibold text-textSoft'>Sign up to continue</p>
+          <p className='text-center mb-8 text-2xl  font-semibold text-textDark'>Create a new account</p>
           <form onSubmit={handleSignUp}>
             <input
               type='text'
@@ -62,11 +71,11 @@ const SignUp = () => {
               placeholder='Password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className='w-full py-2 mb-4 px-2 focus:ring-secondary focus:border-secondary focus:outline-none   border border-borderColor rounded-md'
+              className='w-full py-2 mb-8 px-2 focus:ring-secondary focus:border-secondary focus:outline-none   border border-borderColor rounded-md'
               required
             />
             <p className='text-slate-800 mb-4 text-sm'>
-              By signing up, I accept the SmartLead Terms of Service and acknowledge the Privacy Policy.
+              By signing up, I accept the ... <span className='text-secondary font-semibold'>terms of Service</span> and acknowledge the <span className='text-secondary font-semibold'>Privacy Policy</span>.
             </p>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <button
@@ -78,6 +87,7 @@ const SignUp = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };
