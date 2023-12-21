@@ -41,8 +41,8 @@ const GlobalAnalytics = () => {
   return (
     <div className="w-full space-y-10">
       <DashboardHeader heading={"Dashboard Analytics"} />
-      <div className="space-y-10">
         <h3 className="text-center">Users Count</h3>
+      <div className="flex ">
         <LineChart data={data} />
         <BarChart data={data} />
       </div>

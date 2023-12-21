@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Home } from '@mui/icons-material';
 import toast, { Toaster } from 'react-hot-toast';
+import { formatDate } from '@/app/utils/helper';
+import { setAuthToken } from '@/app/utils/auth';
+
 
 
 const Login = () => {
@@ -33,9 +36,11 @@ const Login = () => {
       if (response.data.token) {
         const token = response.data.token;
         localStorage.clear();
-        localStorage.setItem('user-token', token);
+        setAuthToken(token)
+        localStorage.setItem('user',JSON.stringify(response.data.user.first_name))
+        localStorage.setItem('last_loggedIn',JSON.stringify(formatDate(new Date())))
         setTimeout(() => {
-          toast.success('Welcome back! Ready to roll')
+          toast.success(`Welcome back! ${response.data.user.first_name}`)
           router.push('/dashboard');
         }, 1000);
       } else {
@@ -58,7 +63,7 @@ const Login = () => {
     <div className='flex justify-between px-6 py-4'>
         <p className='text-primary text-2xl font-bold'>logo</p>
         <Link href={'/'}>
-        <div className='hover:cursor-pointer hover:bg-fadedBg p-2'><Home /></div>
+        <div className='hover:cursor-pointer rounded-md hover:bg-fadedBg p-2'><Home /></div>
         </Link>
       </div>
     <div className="min-h-screen flex items-start justify-center  py-12 px-4 sm:px-6 lg:px-8">
@@ -107,7 +112,7 @@ const Login = () => {
           </div>
         </form>
         <p className="text-center">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <span className="text-secondary hover:underline">
             {' '}
             <Link href={'/auth/signup'}>Sign up</Link>{' '}

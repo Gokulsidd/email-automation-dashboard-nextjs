@@ -1,3 +1,4 @@
+'use client'
 import { Tooltip , tooltipClasses , Zoom , styled } from "@mui/material";
 
 const BootstrapTooltip = styled(({ className, ...props }) => (

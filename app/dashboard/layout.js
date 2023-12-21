@@ -1,12 +1,25 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { isAuthenticated } from '../utils/auth'
 import SidebarComponent from '@/app/ui/dashboard/sidebar/sidebar'
 import NavbarComponent from '../ui/dashboard/navbar/navbar'
 
 const Layout = ({children}) => {
   const [showSideBar , setShowSideBar] = useState(false)
+
+  const router = useRouter()
+
+  useEffect(() => {
+    if(!isAuthenticated()){
+      router.push('/auth/login')
+    }
+    
+  },[router])
+
+
   return (
-    <div className='flex-col h-full'>
+    <div className='flex-col overflow-hidden h-full'>
         <div>
             <NavbarComponent handleSideBar={setShowSideBar} isOpen={showSideBar} />
         </div>

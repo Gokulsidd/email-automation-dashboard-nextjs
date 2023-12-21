@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Link from 'next/link';
 
@@ -11,17 +12,17 @@ const SidebarComponent = ({handleSideBar}) => {
       <ul>
         {sideBarData.map((item) => {
           return handleSideBar ? (
-          <Link href={item.path}>
-            <li className="px-4 py-4 hover:bg-fadedBg text-center flex space-x-4 text-gra">
+          <Link key={item} href={item.path}>
+            <li className="px-4 py-3 hover:bg-fadedBg text-center flex space-x-4 text-gra">
               {item.icon && <item.icon sx={{color:'rgb(156, 163, 175)'}} />}
               <div>{item.name}</div>
             </li>
           </Link>
           ):(
-            <Link href={item.path}>
+            <Link key={item} href={item.path}>
             <BootstrapTooltip title={item.name} placement='right'>
-            <li className="px-4 py-4 hover:bg-fadedBg text-center flex space-x-4">
-              {item.icon && <item.icon sx={{color:'rgb(156, 163, 175)'}} />}
+            <li className="px-4 py-3 hover:bg-fadedBg text-center flex space-x-4">
+              {item.icon && <item.icon  sx={{color:'rgb(156, 163, 175)'}} />}
             </li>
             </BootstrapTooltip>
           </Link>

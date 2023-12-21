@@ -74,7 +74,7 @@ const SelectEmails = ({selectedValues , setSelectedValues , options }) => {
       </div>
       ) : null}
       <div className='w-full flex gap-2 px-2 border border-borderColor rounded-md items-center overflow-hidden'>
-        {selectedValues.map((value) => {
+        {selectedValues?.map((value) => {
             return (
                 <div key={value} className='rounded-lg bg-gray-200 px-2 py-1 min-w-fit ' >
                     {value}

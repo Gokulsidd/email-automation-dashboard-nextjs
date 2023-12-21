@@ -1,7 +1,7 @@
 'use client'
 import DashboardHeader from '@/app/ui/dashboard/dashboardHeader/page'
 import { formatDate } from '@/app/utils/helper'
-import { masterInboxData } from '@/constants'
+import { masterInboxData } from '@/constants';
 import React, { useState } from 'react'
 
 const MasterInbox = () => {
@@ -16,7 +16,7 @@ const MasterInbox = () => {
           <div className='font-semibold text-sm text-textDark bg-gray-100 border border-b-gray-600 p-2 text-center'>All Leads</div>
           <div className='w-full flex flex-col overflow-y-scroll h-[77vh]'>
           {masterInboxData.map((item) => (
-            <div className='w-full p-2 py-4 hover:bg-gray-200 cursor-pointer relative border-b border-borderColor' onClick={() => setDetailedData(item)}>
+            <div key={item} className='w-full p-2 py-4 hover:bg-gray-200 cursor-pointer relative border-b border-borderColor' onClick={() => setDetailedData(item)}>
               <p className='absolute right-2 top-4 text-xs text-textSoft'>{formatDate(item.sentAt)}</p>
               <p className='text-md text-textDark font-semibold'>{'name'}</p>
               <p><span className='font-semibold text-textDark'>{'from email'}</span></p>

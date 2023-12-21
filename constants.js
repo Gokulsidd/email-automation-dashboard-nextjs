@@ -41,7 +41,7 @@ export const emailAccountsData = [
   },
   {
     emailAddress: "gokulsidharth02@gmail.com",
-    emailSent: 53,
+    emailSent: 34,
     warmupEmailSent: 15,
     isWarmUpOn: true,
   },
